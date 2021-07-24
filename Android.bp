@@ -9,6 +9,10 @@ rust_library {
     crate_name: "webpki",
     srcs: ["src/lib.rs"],
     edition: "2018",
+    features: [
+        "alloc",
+        "std",
+    ],
     rustlibs: [
         "libring",
         "libuntrusted",
@@ -22,6 +26,10 @@ rust_defaults {
     test_suites: ["general-tests"],
     auto_gen_config: true,
     edition: "2018",
+    features: [
+        "alloc",
+        "std",
+    ],
     rustlibs: [
         "libbase64_rust",
         "libring",
@@ -48,6 +56,10 @@ rust_defaults {
     test_suites: ["general-tests"],
     auto_gen_config: true,
     edition: "2018",
+    features: [
+        "alloc",
+        "std",
+    ],
     rustlibs: [
         "libbase64_rust",
         "libring",
