@@ -2,13 +2,24 @@
 {
   "presubmit": [
     {
-      "name": "webpki_device_test_src_lib"
+      "name": "webpki_test_src_lib"
     },
     {
-      "name": "webpki_device_test_tests_dns_name_tests"
+      "name": "webpki_test_tests_dns_name_tests"
     },
     {
-      "name": "webpki_device_test_tests_integration"
+      "name": "webpki_test_tests_integration"
+    }
+  ],
+  "presubmit-rust": [
+    {
+      "name": "webpki_test_src_lib"
+    },
+    {
+      "name": "webpki_test_tests_dns_name_tests"
+    },
+    {
+      "name": "webpki_test_tests_integration"
     }
   ]
 }
