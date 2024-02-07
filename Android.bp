@@ -36,7 +36,7 @@ rust_library {
     host_supported: true,
     crate_name: "webpki",
     cargo_env_compat: true,
-    cargo_pkg_version: "0.22.0",
+    cargo_pkg_version: "0.22.4",
     srcs: ["src/lib.rs"],
     edition: "2018",
     features: [
@@ -58,7 +58,7 @@ rust_test {
     host_supported: true,
     crate_name: "webpki",
     cargo_env_compat: true,
-    cargo_pkg_version: "0.22.0",
+    cargo_pkg_version: "0.22.4",
     srcs: ["src/lib.rs"],
     test_suites: ["general-tests"],
     auto_gen_config: true,
@@ -73,6 +73,8 @@ rust_test {
     rustlibs: [
         "libbase64_rust",
         "libring",
+        "libserde",
+        "libserde_json",
         "libuntrusted",
     ],
 }
@@ -82,7 +84,7 @@ rust_test {
     host_supported: true,
     crate_name: "dns_name_tests",
     cargo_env_compat: true,
-    cargo_pkg_version: "0.22.0",
+    cargo_pkg_version: "0.22.4",
     srcs: ["tests/dns_name_tests.rs"],
     test_suites: ["general-tests"],
     auto_gen_config: true,
@@ -97,6 +99,8 @@ rust_test {
     rustlibs: [
         "libbase64_rust",
         "libring",
+        "libserde",
+        "libserde_json",
         "libuntrusted",
         "libwebpki",
     ],
@@ -107,7 +111,7 @@ rust_test {
     host_supported: true,
     crate_name: "integration",
     cargo_env_compat: true,
-    cargo_pkg_version: "0.22.0",
+    cargo_pkg_version: "0.22.4",
     srcs: ["tests/integration.rs"],
     test_suites: ["general-tests"],
     auto_gen_config: true,
@@ -122,6 +126,8 @@ rust_test {
     rustlibs: [
         "libbase64_rust",
         "libring",
+        "libserde",
+        "libserde_json",
         "libuntrusted",
         "libwebpki",
     ],
