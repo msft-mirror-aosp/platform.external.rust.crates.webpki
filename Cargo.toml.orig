@@ -16,13 +16,13 @@
 authors = ["Brian Smith <brian@briansmith.org>"]
 categories = ["cryptography", "no-std"]
 description = "Web PKI X.509 Certificate Verification."
-documentation = "https://briansmith.org/rustdoc/webpki/"
 edition = "2018"
 license-file = "LICENSE"
 name = "webpki"
 readme = "README.md"
 repository = "https://github.com/briansmith/webpki"
-version = "0.22.0"
+rust-version = "1.61.0"
+version = "0.22.4"
 
 include = [
     "Cargo.toml",
@@ -30,21 +30,7 @@ include = [
     "LICENSE",
     "README.md",
 
-    "src/calendar.rs",
-    "src/cert.rs",
-    "src/der.rs",
-    "src/end_entity.rs",
-    "src/error.rs",
-    "src/name.rs",
-    "src/name/dns_name.rs",
-    "src/name/ip_address.rs",
-    "src/name/verify.rs",
-    "src/signed_data.rs",
-    "src/time.rs",
-    "src/trust_anchor.rs",
-    "src/verify_cert.rs",
-    "src/lib.rs",
-
+    "src/**/*.rs",
     "src/data/**/*",
 
     "tests/dns_name_tests.rs",
@@ -71,11 +57,13 @@ alloc = ["ring/alloc"]
 std = ["alloc"]
 
 [dependencies]
-ring = { version = "0.16.19", default-features = false }
-untrusted = "0.7.1"
+ring = { version = "0.17.2", default-features = false }
+untrusted = "0.9"
 
 [dev-dependencies]
 base64 = "0.9.1"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
 
 [profile.bench]
 opt-level = 3
@@ -92,3 +80,9 @@ rpath = false
 lto = true
 debug-assertions = false
 codegen-units = 1
+
+[workspace]
+members = [
+    # Intentionally not a default member.
+    "rcgen-tests",
+]
